@@ -66,11 +66,15 @@ function details(elts) {
             //e.preventDefault();
             console.log(elt.name + " " + elt._id);
 
-            var request = new XMLHttpRequest();
+            const request = new XMLHttpRequest();
             request.open("POST", "https://steve-taramasco.github.io/P_5/front/produit.html");
+            request.addEventListener("load", function () {
+                if (request.status >= 200 && request.status < 400) {
+                    console.log(request.responseText);
+                }
+            })
             request.setRequestHeader("Content-Type", "application/json");
             request.send(JSON.stringify(elt));
-
         })
     }
 }
