@@ -3,9 +3,10 @@
 const request = new XMLHttpRequest();
 request.onreadystatechange = function () {
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-        
+
         response = JSON.parse(this.responseText)
         newArticle(response);
+        details(response);
     }
 }
 request.open('GET', 'http://localhost:3000/api/teddies', true);
@@ -17,7 +18,7 @@ request.send();
 function newArticle(elts) {
 
     const div_row = document.getElementById('content-top');
-    
+
     for (let i = 0; i < elts.length; i++) {
 
         const div_col = document.createElement('div');
@@ -50,11 +51,11 @@ function newArticle(elts) {
         div.appendChild(button);
     }
 }
-/*
+
 
 function details(elts) {
 
-    let liens = document.querySelectorAll('a.produit');
+    let liens = document.querySelectorAll('a.btn');
 
     for (let i = 0; i < liens.length; i++) {
         let lien = liens[i];
@@ -62,10 +63,14 @@ function details(elts) {
 
         lien.addEventListener('click', function (e) {
 
-            e.preventDefault();
+            //e.preventDefault();
             console.log(elt.name + " " + elt._id);
+
+            var request = new XMLHttpRequest();
+            request.open("POST", "https://steve-taramasco.github.io/P_5/front/produit.html");
+            request.setRequestHeader("Content-Type", "application/json");
+            request.send(JSON.stringify(elt));
 
         })
     }
 }
-*/
