@@ -70,7 +70,12 @@ function details(elts) {
             request.open("POST", "https://steve-taramasco.github.io/P_5/front/produit.html");
             request.addEventListener("load", function () {
                 if (request.status >= 200 && request.status < 400) {
-                    console.log(request.responseText);
+            
+                    response = JSON.parse(this.responseText)
+                    newArticle(response);
+                    
+                } else {
+                    console.error(req.status + " " + req.statusText + " " + url);
                 }
             })
             request.setRequestHeader("Content-Type", "application/json");
