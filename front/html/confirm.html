@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="./front/style.css">
-    <title>Orinoco | Accueil</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+    <title>Orinoco | Confirmation</title>
 </head>
 
 <body>
@@ -15,8 +16,8 @@
         <header class="container">
             <div class="row">
                 <nav class="col navbar navbar-expand-md navbar-light">
-                    <a class="navbar-brand" href="index.html">
-                        <img src="./front/img/logo.png" width="140" height="auto" alt="Site logo">
+                    <a class="navbar-brand" href="../index.html">
+                        <img src="../img/logo.png" width="140" alt="Site logo">
                     </a>
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
@@ -25,11 +26,11 @@
 
                     <div id="navbarContent" class="collapse navbar-collapse">
                         <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="index.html">Accueil</a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html">Accueil</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./front/panier.html">Panier</a>
+                                <a class="nav-link" href="panier.html">Panier</a>
                             </li>
                         </ul>
                     </div>
@@ -38,16 +39,22 @@
             </div>
         </header>
     </div>
+
     <main class="container">
 
         <div class="jumbotron">
-            <h1 class="text-center">Bienvenu !</h1>
+            <h1 class="text-center">Confirmation !</h1>
         </div>
-
-        <div id="content-top" class="row justify-content-md-center">
-
+        <div>
+            <p>
+                Bonjour <strong><span id="firstName"></span></strong>,
+                votre commande n° <strong><span id="orderId"></span></strong><br>
+                à bien été enregistrée !<br>
+                Un e-mail de confirmation vous à été envoyer à l'adresse : <strong><span id="mail"></span></strong>.
+            </p>
         </div>
     </main>
+
     <div class="bg">
         <footer class="container">
             <div class="row">
@@ -57,15 +64,15 @@
                         <li class="list-inline-item">&middot;</li>
                         <li class="list-inline-item"><a class="text-secondary" href="#">Vie privée</a></li>
                         <li class="list-inline-item">&middot;</li>
-                        <li class="list-inline-item"><a class="text-secondary" href="#">Conditions d'utilisations</a></li>
+                        <li class="list-inline-item"><a class="text-secondary" href="#">Conditions d'utilisations</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </footer>
     </div>
-
-    <script src="https://kit.fontawesome.com/dd54313d73.js" crossorigin="anonymous"></script>
-    <script src="./front/js/app.js"></script>
+    <script src="../js/confirm.js"></script>
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
@@ -75,6 +82,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
     </script>
+
 </body>
 
 </html>

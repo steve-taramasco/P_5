@@ -1,0 +1,66 @@
+.bg {
+    background-color: #f3e9f1;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+footer ul {
+    margin-top: 1rem;
+}
+
+footer {
+    margin-top: 2rem;
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+ion-icon {
+    vertical-align: text-bottom;
+    font-size: 20px;
+}
+
+.button {
+    background: none;
+    padding: initial;
+    border: none;
+    cursor: pointer;
+    line-height: normal;
+    border-radius: 50%;
+}
+
+.qty {
+    margin: 0 .5em;
+}
+
+.help {
+    display: none;
+    color: rgba(191, 68, 68, 0.75);
+}
+
+.valid:focus {
+    box-shadow: 0 0 8px rgba(68, 191, 68, 0.5);
+    border-color: rgba(68, 191, 68, 0.75);
+}
+
+.valid {
+    border-color: rgba(68, 191, 68, 0.75);
+}
+
+.invalid:focus {
+    box-shadow: 0 0 8px rgba(191, 68, 68, 0.5);
+    border-color: rgba(191, 68, 68, 0.75);
+}
+
+.invalid {
+    border-color: rgba(191, 68, 68, 0.75);
+}
+
+.icon {
+    padding: .5em;
+}

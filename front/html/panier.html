@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Orinoco | Produit</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+    <title>Orinoco | Panier</title>
 </head>
 
 <body>
@@ -16,7 +17,7 @@
             <div class="row">
                 <nav class="col navbar navbar-expand-md navbar-light">
                     <a class="navbar-brand" href="../index.html">
-                        <img src="./img/logo.png" width="140" height="auto" alt="Site logo">
+                        <img src="../img/logo.png" width="140" alt="Site logo">
                     </a>
 
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
@@ -28,7 +29,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="../index.html">Accueil</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item active">
                                 <a class="nav-link" href="panier.html">Panier</a>
                             </li>
                         </ul>
@@ -41,12 +42,46 @@
     <main class="container">
 
         <div class="jumbotron">
-            <h1 class="text-center">Produit !</h1>
+            <h1 id="message" class="text-center"></h1>
         </div>
 
-        <section>
+        <div id="alert" class="alert alert-danger alert-dismissible fade" role="alert">
+            <span class="icon"><i class="far fa-lg fa-comment"></i></span>
+            article supprimé du panier avec succès.
+        </div>
 
-        </section>
+        <div class="products row justify-content-center">
+            <table class="table">
+                <thead class="text-center">
+                    <tr class="d-flex">
+                        <th class="col-1" scope="col">
+                            <span>
+                                <ion-icon name='trash-outline'></ion-icon>
+                            </span>
+                        </th>
+                        <th class="col-md-3" scope="col" style="width:150px">Article</th>
+                        <th class="col-2" scope="col">Couleur</th>
+                        <th class="col-3" scope="col">Qté</th>
+                        <th class="col-3" scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                </tbody>
+                <tfoot>
+                    <tr class="d-flex">
+                        <td class="d-none d-md-block col-md-6"></td>
+                        <td class="text-right text-md-center font-weight-bold col-9 col-md-3">Sous total :</td>
+                        <td id="sous-total" class="text-center col-3 col-md-3">0,00 €</td>
+                    </tr>
+                    <tr class="d-flex">
+                        <td class="border-0  col-md-9"></td>
+                        <td class="text-right text-md-center border-0 col-md-3">
+                            <button type="button" id="order" class="btn btn-warning">Commander</button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
     </main>
     <div class="bg">
         <footer class="container">
@@ -57,14 +92,17 @@
                         <li class="list-inline-item">&middot;</li>
                         <li class="list-inline-item"><a class="text-secondary" href="#">Vie privée</a></li>
                         <li class="list-inline-item">&middot;</li>
-                        <li class="list-inline-item"><a class="text-secondary" href="#">Conditions d'utilisations</a></li>
+                        <li class="list-inline-item"><a class="text-secondary" href="#">Conditions d'utilisations</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </footer>
     </div>
-    
-    <script src="https://kit.fontawesome.com/dd54313d73.js" crossorigin="anonymous"></script>
+
+    <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script src="../js/panier.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
