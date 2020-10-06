@@ -1,24 +1,27 @@
 showOne();
 
-async function getId() {
-
+async function getId() { // recupere l'id et creer une url //
     const id = JSON.parse(localStorage.getItem("article_id"));
     const url = 'http://localhost:3000/api/teddies/' + id;
     return url;
 }
 
-async function getTeddy() {
-
-    let url = await getId();
-    let response = await fetch(url);
-    let data = await response.json()
-    return data;
+async function getTeddy() { // recupere l'element // ou affiche feedback //
+    const message = document.getElementById('message');
+    try {
+        const url = await getId();
+        const response = await fetch(url);
+        const data = await response.json()
+        return data;
+    } catch (error) {
+        console.error("erreur de connexion à l'api : " + error);
+        message.textContent = "Oops erreur de connexion :/";
+        return;
+    }
 }
 
-async function showOne() {
-
-    const mess = document.getElementById('message');
-
+async function showOne() { // affiche l element // ou affiche feedback //
+    const message = document.getElementById('message');
     const elt = await getTeddy();
     const div_row = document.getElementById('content');
     const product = document.createElement('article');
@@ -84,20 +87,20 @@ async function showOne() {
     })
 }
 
-function showAlert() {
+function showAlert() { // affiche un feedback en cas d'ajout d'articles //
     const alert = document.getElementById("alert");
     alert.classList.add("show");
+
     setTimeout(function () {
         alert.classList.remove("show");
     }, 2000);
 
 }
 
-function createObject(elt) {
+function createObject(elt) { // creer un objet //
     const liste = document.getElementById('liste');
     const color = liste.options[liste.selectedIndex].value;
-
-    let product = {
+    const product = {
         name: elt.name,
         price: elt.price,
         id: elt._id,
@@ -108,17 +111,13 @@ function createObject(elt) {
     setItems(product);
 }
 
-function setItems(product) {
-
+function setItems(product) { // ajoute le produit au panier // ou incremente l objet //
     const articles = JSON.parse(localStorage.getItem("article_inCart")) || [];
     const indice = articles.findIndex(element => element.id === product.id && element.color === product.color);
 
     if (indice != -1) {
-
         articles[indice].inCart += 1;
-
     } else {
-
         product.inCart += 1;
         articles.push(product);
     }

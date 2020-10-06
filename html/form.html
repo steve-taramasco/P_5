@@ -43,7 +43,7 @@
     <main class="container">
 
         <div class="jumbotron">
-            <h1 class="text-center">Commande !</h1>
+            <h1 id="message" class="text-center">Commande !</h1>
         </div>
 
         <form>
@@ -62,7 +62,8 @@
 
             <div class="form-group">
                 <label for="address">Adresse :</label>
-                <input type="text" class="form-control" placeholder="Enter address" id="address" name="address" required>
+                <input type="text" class="form-control" placeholder="Enter address" id="address" name="address"
+                    required>
                 <span class="help">l'adresse doit contenir au moins 10 caractères. </span>
             </div>
 
@@ -76,7 +77,7 @@
                 <div class="form-group col-md-2">
                     <label for="zip">Zip :</label>
                     <input type="number" class="form-control" placeholder="Enter zip" id="zip">
-                    <span class="help">le code zip doit contenir au moins 5 chiffres.</span>
+                    <span class="help">le code zip doit contenir 5 chiffres.</span>
                 </div>
             </div>
 
