@@ -3,7 +3,7 @@
 
 Orinoco est un site d'e-commerce spécialisé dans la vente de pelluches faite à la main.
 
-le site est composé de 5 pages :
+le site est composé de 5 pages : 
 
 - d'une page d'acceuil permettant de selectionner un article au click sur une image.
 
